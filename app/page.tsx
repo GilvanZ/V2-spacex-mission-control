@@ -15,7 +15,7 @@ export default function Home() {
   const [cardInfo, setCardInfo]=useState(null)
 
     //Seach useState
-  const[search, setSearch] = useState()
+  const[search, setSearch] = useState('')
   console.log(search)
 
   return (
