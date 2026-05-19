@@ -33,9 +33,9 @@ export default function Home() {
 
           {/* Links */}
           <div className="flex items-center gap-3">
-            <a href="https://github.com/seu-user" target="_blank" className="text-white/40 hover:text-white transition-colors text-sm">GitHub</a>
-            <a href="https://linkedin.com/in/seu-user" target="_blank" className="text-white/40 hover:text-white transition-colors text-sm">LinkedIn</a>
-            <a href="/portfolio" className="text-xs border border-[#7c6fff]/50 text-[#7c6fff] px-3 py-1 rounded-full hover:bg-[#7c6fff]/10 transition-all">
+            <a href="https://github.com/GilvanZ" target="_blank" className="text-white/40 hover:text-white transition-colors text-sm">GitHub</a>
+            <a href="https://www.linkedin.com/in/gilvan-zacarias-7804211b9/" target="_blank" className="text-white/40 hover:text-white transition-colors text-sm">LinkedIn</a>
+            <a href="https://portfolio-omega-teal-64.vercel.app" className="text-xs border border-[#7c6fff]/50 text-[#7c6fff] px-3 py-1 rounded-full hover:bg-[#7c6fff]/10 transition-all">
               Portfólio →
             </a>
           </div>
