@@ -2,8 +2,8 @@ import { ValueOf } from 'next/dist/shared/lib/constants';
 import React from 'react'
 
 interface SearchProps {
-  value?: string
-  onChange?: (value: string) => void
+  value: string
+  onChange: (value: string) => void
 }
 
 export default function Search({value, onChange}:SearchProps) {
