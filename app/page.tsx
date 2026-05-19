@@ -17,6 +17,7 @@ export default function Home() {
     //Seach useState
   const[search, setSearch] = useState('')
   console.log(search)
+  const searchResult = launches.filter(i=>i.name.toLowerCase().includes(search.toLowerCase()));
 
   return (
       <section className="flex flex-col sm:h-screen gap-1 h-screen overflow-hidden">
@@ -50,11 +51,31 @@ export default function Home() {
                 />
             </div>
 
-            {/* div cards left*/}
-            <div className="overflow-y-auto h-full gap-1 pb-16  border-white/10 rounded-2x">
 
-            {
-              //Cards
+            {/* div cards left*/}
+            {/*Search first, and then all another cards */}
+            <div className="overflow-y-auto h-full gap-1 pb-16  border-white/10 rounded-2x">
+            {search.length > 1
+            ? searchResult.map(i=>
+              <div className="p-1">
+                  <Card 
+                    name={i.name}
+                    icon={i.links.patch.small}
+                    launchpad={i.launchpad}
+                    imgLarge={i.links.patch.large}
+                    onClick={() => setCardInfo(i)}
+                    date={i.date_utc}
+                    success={i.success}
+                    flightNumber={i.flight_number}
+                    details={i.details}
+                    webcast={i.links.webcast}
+                    wikipedia={i.links.wikipedia}
+                    upcoming={i.upcoming}
+                    key={i}
+                  />
+                </div>
+            )
+            ://Cards
               // Skeleton Loading first
               launches.length === 0
               ? Array.from({length:10}).map((_,i)=>(
@@ -68,7 +89,6 @@ export default function Home() {
                   </div>
                 </div>
               ))
-
               //Sowing cards
               : launches.map(i => 
                 <div className="p-1">
@@ -92,6 +112,8 @@ export default function Home() {
             }
             </div>
           </div>
+
+          
           {/*Rigth div */}
           <div className=" flex flex-1 sm:h-full md:flex-1/4 text-center lg:flex-3 relative items-center justify-center rounded-2xl overflow-hidden overflow-y-auto">
           <div className="animate-pulse">
