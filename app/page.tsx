@@ -12,7 +12,7 @@ export default function Home() {
     GetLaunches().then(data=>setLaunches(data))
   },[])
 
-  const [cardInfo, setCardInfo]=useState(null)
+  const [cardInfo, setCardInfo]=useState<any>(null)
 
     //Seach useState
   const[search, setSearch] = useState('')
