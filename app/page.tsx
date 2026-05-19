@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   //cards and information UseState 
-  const[launches, setLaunches]=useState([])
+  const[launches, setLaunches]=useState<any[]>([])
   useEffect(()=>{
     GetLaunches().then(data=>setLaunches(data))
   },[])
